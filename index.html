@@ -1,34 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="p5.js"></script>
-  <title>Monte Carlo Method</title>
-  <style>
-    body {
-      margin: 70px;
-      background-color: #343a40;
-      color: white;
-    }
-    
-  </style>
-</head>
-<body>
-  <header class="text-center mb-4">
-    <h1>Monte Carlo π Approximation</h1>
-    <p>Adjust the number of points and observe the results!</p>
-  </header>
-  
-  <main class="text-center">
-    <label for="points-slider">Points:</label>
-    <input type="range" id="points-slider" min="100" max="100000" step="100" value="1000">
-    <p id="points-value">Points: 1000</p>
-    <div id="canvas-container"></div>
-    <button id="restart-btn" class="btn btn-primary mt-3">Restart Simulation</button>
-  </main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Monte Carlo π Approximation</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Monte Carlo Method</h1>
+        <p class="subtitle">Approximating π through random sampling</p>
+      </header>
 
-  <script src="script.js"></script>
-</body>
+      <div class="main-content">
+        <!-- Left Panel: Info and Controls -->
+        <aside class="info-panel">
+          <div class="card">
+            <h2 class="card-title">About</h2>
+            <p class="card-text">
+              The Monte Carlo method uses random sampling to approximate π. By
+              randomly placing points in a square and counting how many fall
+              inside a circle, we can estimate π using the ratio:
+            </p>
+            <div class="formula">π ≈ 4 × (points inside / total points)</div>
+          </div>
+
+          <div class="card stats-card">
+            <h2 class="card-title">Statistics</h2>
+            <div class="stat-item">
+              <span class="stat-label">π Approximation</span>
+              <span class="stat-value pi-highlight" id="pi-value"
+                >0.000000</span
+              >
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Points Generated</span>
+              <span class="stat-value" id="points-generated">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Inside Circle</span>
+              <span class="stat-value" id="points-inside">0 (0%)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Error</span>
+              <span class="stat-value" id="error-value">0.000000</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="card controls-card">
+            <h2 class="card-title">Controls</h2>
+
+            <div class="control-group">
+              <label class="control-label">
+                <span>Target Points</span>
+                <span id="points-display" class="control-value">10,000</span>
+              </label>
+              <input
+                type="range"
+                id="points-slider"
+                class="slider"
+                min="100"
+                max="100000"
+                step="100"
+                value="10000"
+              />
+              <div class="range-labels">
+                <span>100</span>
+                <span>100,000</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">
+                <span>Simulation Speed</span>
+                <span id="speed-display" class="control-value">Medium</span>
+              </label>
+              <input
+                type="range"
+                id="speed-slider"
+                class="slider"
+                min="1"
+                max="5"
+                step="1"
+                value="3"
+              />
+              <div class="range-labels">
+                <span>Slow</span>
+                <span>Fast</span>
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button id="pause-btn" class="btn btn-secondary">
+                <span id="pause-icon">⏸</span>
+                <span id="pause-text">Pause</span>
+              </button>
+              <button id="restart-btn" class="btn btn-primary">
+                <span>🔄</span> Restart
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right Panel: Canvas -->
+        <div class="canvas-section">
+          <div class="canvas-wrapper">
+            <div id="canvas-container"></div>
+            <div class="legend">
+              <div class="legend-item">
+                <span class="legend-dot inside"></span>
+                <span>Inside Circle</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot outside"></span>
+                <span>Outside Circle</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>
+          Built with <a href="https://p5js.org/" target="_blank">p5.js</a> | The
+          more points, the better the approximation
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
