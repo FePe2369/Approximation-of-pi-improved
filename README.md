@@ -1,4 +1,4 @@
-# 🎲 Monte Carlo π Approximation
+# Monte Carlo π Approximation
 
 An interactive visualization of the Monte Carlo method for approximating π through random sampling. Built with p5.js and modern web technologies.
 
@@ -6,7 +6,7 @@ An interactive visualization of the Monte Carlo method for approximating π thro
 ![p5.js](https://img.shields.io/badge/p5.js-1.7.0-ED225D)
 ![Status](https://img.shields.io/badge/Status-Complete-success)
 
-## 🎯 What is this?
+## What is this?
 
 This project demonstrates how we can approximate the value of π using random sampling and probability. By randomly placing points in a square and counting how many fall inside an inscribed circle, we can estimate π using the simple ratio:
 
