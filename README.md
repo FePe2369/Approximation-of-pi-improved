@@ -188,7 +188,7 @@ In the `draw()` function:
 ellipse(point.x, point.y, 8, 8); // Increase from 5 to 8
 ```
 
-## 📈 Expected Results
+## Expected Results
 
 | Points  | Typical Accuracy | Time (Fast Speed) |
 | ------- | ---------------- | ----------------- |
