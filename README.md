@@ -236,4 +236,4 @@ This project is open source and available for educational purposes. Feel free to
 **Made with ❤️ and random numbers**
 
 
-**Happy approximating! 🎲**
+**Happy approximating!**
