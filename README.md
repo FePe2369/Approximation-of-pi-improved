@@ -153,41 +153,6 @@ This project is perfect for:
 3. **Convergence**: Plot error over time - does it decrease monotonically?
 4. **Law of Large Numbers**: Observe how approximation stabilizes with more points
 
-## Customization
-
-Want to tweak the design? Here are some ideas:
-
-### Change Colors
-
-Edit `montecarlo-style.css`:
-
-```css
-:root {
-  --primary-color: #your-color;
-  --success-color: #your-color;
-  --danger-color: #your-color;
-}
-```
-
-### Adjust Canvas Size
-
-Edit `montecarlo-script.js`:
-
-```javascript
-function setup() {
-  const canvas = createCanvas(600, 600); // Change dimensions
-  // ...
-}
-```
-
-### Modify Point Size
-
-In the `draw()` function:
-
-```javascript
-ellipse(point.x, point.y, 8, 8); // Increase from 5 to 8
-```
-
 ## Expected Results
 
 | Points  | Typical Accuracy | Time (Fast Speed) |
@@ -231,9 +196,3 @@ This project is open source and available for educational purposes. Feel free to
 - Inspired by classical Monte Carlo simulations
 - Design influenced by modern data visualization principles
 
----
-
-**Made with ❤️ and random numbers**
-
-
-**Happy approximating!**
